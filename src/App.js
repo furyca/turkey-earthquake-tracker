@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import Header from "./components/Header";
+import Loader from "./components/Loader";
 import Map from "./components/Map";
 
 function App() {
@@ -13,14 +15,14 @@ function App() {
 
       setQuakeList(data.result)
       setLoading(false)
-      //console.log(data.result[0].geojson.coordinates);
     }
     fetchData()
   }, [])
 
   return (
     <div>
-      { !loading ? <Map quakeList={quakeList} /> : <h1>Loading</h1>}
+      <Header />
+      { !loading ? <Map quakeList={quakeList} /> : <Loader />} 
     </div>
   );
 }

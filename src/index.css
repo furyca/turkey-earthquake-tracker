@@ -12,3 +12,63 @@ body {
   font-size: 1rem;
   color: gray;
 }
+
+header {
+  padding: 10px;
+  background-color: navy;
+  color: #fff;
+  position: fixed;
+  width: 100vw;
+  z-index: 100;
+}
+
+header h2 {
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.loader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.loader img {
+  width: 64px;
+}
+
+.location-info-box {
+  position: absolute;
+  z-index: 100;
+  width: 400px;
+  background-color: rgba(30, 30, 30, 0.9);
+  color: whitesmoke;
+  top: 50px;
+  right: 10px;
+  border-radius: 10px;
+}
+
+.location-info-box h5 {
+  display: flex;
+  justify-content: center;
+}
+
+.location-info-box ul {
+  padding-right: 40px;
+  line-height: 1.6;
+}
+
+
+.location-info-box li {
+  font-size: 0.8rem;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+.location-icon {
+  cursor: pointer;
+}
