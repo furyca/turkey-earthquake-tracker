@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import Header from "./components/Header";
-import Loader from "./components/Loader";
-import Map from "./components/Map";
-
+import Header from "../Header/Header";
+import Loader from "../Loader/Loader";
+import Map from "../Map/Map";
+import style from './App.module.scss'
 function App() {
   const [quakeList, setQuakeList] = useState([])
   const [loading, setLoading] = useState(false)
@@ -32,11 +32,11 @@ function App() {
   }
 
   return (
-    <div>
+    <div className={style.container}>
       <Header handleMinChange={handleMinMag} handleMaxChange={handleMaxMag} />
       { loading ? <Loader /> : <Map quakeList={quakeList} minMagnitude={magLimits.minLimit} maxMagnitude={magLimits.maxLimit} />} 
     </div>
-  );
+  )
 }
 
 export default App;

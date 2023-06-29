@@ -1,8 +1,9 @@
 import GoogleMapReact from 'google-map-react';
 import { memo, useState } from 'react';
 import uuid from 'react-uuid';
-import LocationIcon from './LocationIcon';
-import LocationInfoBox from './LocationInfoBox';
+import LocationIcon from '../LocationIcon/LocationIcon';
+import LocationInfoBox from '../LocationInfoBox/LocationInfoBox';
+import style from './Map.module.scss'
 
 const apiKey = process.env.REACT_APP_GOOGLE_API_KEY;
 
@@ -24,7 +25,7 @@ const Map = ( {quakeList, minMagnitude, maxMagnitude} ) => {
   })
 
   return (
-        <div className='map'>
+        <div className={style.map}>
             <GoogleMapReact
                 bootstrapURLKeys={{ key: apiKey}}
                 center={center}

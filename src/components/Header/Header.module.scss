@@ -1,0 +1,35 @@
+.minContainer,
+.maxContainer {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  label {
+    font-size: 0.75rem;
+    text-align: center;
+  }
+  select {
+    padding: 5px 20px;
+    margin-top: 5px;
+  }
+}
+
+@media only screen and (min-width: 600px)  {
+  .minContainer,
+  .maxContainer {
+    width: 25%;
+  }
+  .minContainer {
+    margin-right: 20px;
+  }
+}
+
+@media only screen and (min-width: 1024px)  {
+  .minContainer,
+  .maxContainer {
+    label {
+      font-size: 1rem;
+    }
+  }
+}
