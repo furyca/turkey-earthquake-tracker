@@ -11,8 +11,14 @@ const center = {
   lat: 38.75,
   lng: 36
 };
+
+const mapOptions = {
+  disableDefaultUI: true
+};
+
 const Map = ( {quakeList, minMagnitude, maxMagnitude} ) => {
   const [locationInfo, setLocationInfo] = useState(null)
+  
 
   const markers = quakeList.map(quake => {
     return quake.mag >= minMagnitude && quake.mag <= maxMagnitude && 
@@ -30,6 +36,7 @@ const Map = ( {quakeList, minMagnitude, maxMagnitude} ) => {
                 bootstrapURLKeys={{ key: apiKey}}
                 center={center}
                 zoom={6}
+                options={mapOptions}
             >
               {markers}
             </GoogleMapReact>
