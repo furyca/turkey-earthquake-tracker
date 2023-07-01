@@ -7,7 +7,7 @@ function App() {
   const [quakeList, setQuakeList] = useState([])
   const [loading, setLoading] = useState(false)
   const [magLimits, setMagLimits] = useState({
-    minLimit: 0,
+    minLimit: 2,
     maxLimit: 10
   })
 
@@ -24,6 +24,7 @@ function App() {
     fetchData()
   }, [])
 
+  //Equalize maximum value to the minimum if maximum value exceeds the minimum and vice versa
   const handleMinMag = (minMag) => {
     minMag > magLimits.maxLimit ? setMagLimits({minLimit: minMag, maxLimit: minMag}) : setMagLimits({...magLimits, minLimit: minMag})
   }
@@ -33,7 +34,7 @@ function App() {
 
   return (
     <div className={style.container}>
-      <Header handleMinChange={handleMinMag} handleMaxChange={handleMaxMag} />
+      <Header handleMinChange={handleMinMag} handleMaxChange={handleMaxMag} minLimit={magLimits.minLimit} maxLimit={magLimits.maxLimit} />
       { loading ? <Loader /> : <Map quakeList={quakeList} minMagnitude={magLimits.minLimit} maxMagnitude={magLimits.maxLimit} />} 
     </div>
   )

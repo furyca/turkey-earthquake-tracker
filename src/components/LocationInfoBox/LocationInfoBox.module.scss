@@ -1,11 +1,10 @@
 .locationInfoBox {
-  position: absolute;
+  position: sticky;
   z-index: 2;
   width: 100%;
   background-color: #1e1e1e;
   color: whitesmoke;
   bottom: 0;
-  border-radius: 5px;
   text-align: center;
 
   ul {
@@ -24,17 +23,19 @@
 @media only screen and (min-width: 600px) and (max-width: 768px) {
   .locationInfoBox {
     width: 95%;
-    transform: translate(2.5%, 0)
+    transform: translate(2.5%, 0);
+    border-radius: 5px;
   }  
 }
 
 @media only screen and (min-width: 768px) {
   .locationInfoBox {
+    position: absolute;
     max-width: 40%;
+    bottom: auto;
     top: 85px;
     right: 15px;
     padding: 5px;
-    bottom: unset;
     background-color: #1e1e1edf;
   }  
 }
